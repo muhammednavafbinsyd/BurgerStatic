@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexagon Search Bar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .menu-text {
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hexagon-search {
+            position: relative;
+            width: 500px;
+            height: 80px;
+        }
+
+        .hexagon-border {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ffa500, #ff8c00, #ffd700);
+            clip-path: polygon(15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
+            padding: 2px;
+            box-shadow:
+                0 0 20px rgba(255, 165, 0, 0.3),
+                0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hexagon-inner {
+            width: 100%;
+            height: 100%;
+            background: #1e2139;
+            clip-path: polygon(15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
+            display: flex;
+            align-items: center;
+            padding: 0 50px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: white;
+            font-size: 24px;
+            font-weight: 500;
+            padding-left: 20px;
+            padding-right: 60px;
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 24px;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-icon-hex {
+            width: 50px;
+            height: 30px;
+            background: #ffa500;
+            clip-path: polygon(15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .search-icon-hex::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border: 2px solid #1e2139;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translate(-2px, -2px);
+        }
+
+        .search-icon-hex::after {
+            content: '';
+            width: 5px;
+            height: 2px;
+            background: #1e2139;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translate(3px, 3px) rotate(45deg);
+        }
+
+        /* Hexagon icon styling */
+        .hex-icon {
+            width: 24px;
+            height: 24px;
+            background: #ffa500;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            margin-right: 10px;
+        }
+
+        /* Glow effect on focus */
+        .search-input:focus+.search-icon .search-icon-hex {
+            filter: none;
+        }
+
+        .hexagon-border:focus-within {
+            box-shadow:
+                0 0 20px rgba(255, 165, 0, 0.3),
+                0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Alternative sizes */
+        .hexagon-search.small {
+            width: 225px;
+            height: 70px;
+        }
+
+        .hexagon-search.small .search-input {
+            font-size: 18px;
+            padding-left: 15px;
+            padding-right: 50px;
+        }
+
+        .hexagon-search.small .search-input::placeholder {
+            font-size: 18px;
+        }
+
+        .hexagon-search.small .search-icon {
+            right: 25px;
+            width: 40px;
+            height: 24px;
+        }
+
+        .hexagon-search.small .search-icon-hex {
+            width: 40px;
+            height: 24px;
+        }
+
+        .hexagon-search.small .search-icon-hex::before {
+            width: 8px;
+            height: 8px;
+            border-width: 1.5px;
+        }
+
+        .hexagon-search.small .search-icon-hex::after {
+            width: 4px;
+            height: 1.5px;
+        }
+
+        .hexagon-search.large {
+            width: 600px;
+            height: 100px;
+        }
+
+        .hexagon-search.large .search-input {
+            font-size: 28px;
+            padding-left: 25px;
+            padding-right: 70px;
+        }
+
+        .hexagon-search.large .search-input::placeholder {
+            font-size: 28px;
+        }
+
+        .hexagon-search.large .search-icon {
+            right: 35px;
+            width: 60px;
+            height: 36px;
+        }
+
+        .hexagon-search.large .search-icon-hex {
+            width: 60px;
+            height: 36px;
+        }
+
+        .hexagon-search.large .search-icon-hex::before {
+            width: 12px;
+            height: 12px;
+            border-width: 2.5px;
+        }
+
+        .hexagon-search.large .search-icon-hex::after {
+            width: 6px;
+            height: 2.5px;
+        }
+
+        .demo-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .demo-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .size-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 18px;
+            min-width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo-grid">
+        <!-- Main Design (matching your image) -->
+        <div class="demo-item">
+            <div class="menu-text">Menu</div>
+            <div class="hexagon-search">
+                <div class="hexagon-border">
+                    <div class="hexagon-inner">
+                        <input type="text" class="search-input" placeholder="Search">
+                        <div class="search-icon">
+                            <div class="search-icon-hex"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Different sizes -->
+        <div class="demo-item">
+            <div class="size-label">Small:</div>
+            <div class="hexagon-search small">
+                <div class="hexagon-border">
+                    <div class="hexagon-inner">
+                        <input type="text" class="search-input" placeholder="Search">
+                        <div class="search-icon">
+                            <div class="search-icon-hex"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="size-label">Large:</div>
+            <div class="hexagon-search large">
+                <div class="hexagon-border">
+                    <div class="hexagon-inner">
+                        <input type="text" class="search-input" placeholder="Search">
+                        <div class="search-icon">
+                            <div class="search-icon-hex"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 
+    <script>
+        // Minimal functionality without animations
+        const searchInputs = document.querySelectorAll('.search-input');
+        
+        searchInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                console.log('Search focused');
+            });
+        });
+    </script> -->  
+</body>
+
+</html>
