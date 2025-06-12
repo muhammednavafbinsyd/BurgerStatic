@@ -1,193 +1,136 @@
 * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: #11101a;
-            font-family: Arial, sans-serif;
-        }
-        
-        main {
-            background-image: url('./imG/Group\ 3.png');
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 100vh;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        main nav ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-     
-        }
-        
-        main nav ul li {
-            margin: 0 1.5rem;
-            list-style-type: none;
-            font-size: 1.2rem;
-            color: white;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        
-        main nav ul li:hover {
-            color: #ffcc00;
-        }
+body {
+    background-color: #11101a;
+    font-family: Arial, sans-serif;
+}
 
-        /* Search Container */
-        .search-container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
+main {
+    background-image: url('./imG/Group\ 3.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
 
-        .hexagon-search {
-            position: relative;
-            width: 500px;
-            height: 80px;
-        }
+main nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
 
-        .hexagon-border {
-            position: absolute;
-            width: 100%;
-            height: 70%;
-            background: #ffcc00;
-            clip-path: polygon(15% 0%, 85% 0%, 91% 50%, 85% 100%, 15% 100%, 9% 50%);
-            padding: 2px;
-        }
+}
 
-        .hexagon-inner {
-            width: 100%;
-            height: 100%;
-            background: #11101a;
-            clip-path: polygon(15% 0%, 85% 0%, 91% 50%, 85% 100%, 15% 100%, 9% 50%);
-            padding: 0 35px;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
+main nav ul li {
+    margin: 0 1.5rem;
+    list-style-type: none;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
 
-        .search-input {
-            width: 100%;
-            height: 100%;
-            border: none;
-            outline: none;
-            background: transparent;
-            color: white;
-            font-size: 24px;
-            font-weight: 500;
-            padding-left: 20px;
-            padding-right: 60px;
-        }
+main nav ul li:hover {
+    color: #ffcc00;
+}
 
-        .search-input::placeholder {
-            color: #ccc;
-            font-size: 24px;
-        }
+/* Search Co  ntainer */
 
-        .search-icon {
-            position: absolute;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
-        .search-icon-hex {
-            width: 50px;
-            height: 30px;
-            background: #ffcc00;
-            clip-path: polygon(15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
+.hexagon-search {
+    position: relative;
+}
 
-        .search-icon-hex::before {
-            content: '';
-            width: 10px;
-            height: 10px;
-            border: 2px solid #11101a;
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) translate(-2px, -2px);
-        }
+.hexagon-border {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    background: #ffcc00;
+    clip-path: polygon(15% 0%, 85% 0%, 91% 50%, 85% 100%, 15% 100%, 9% 50%);
+    padding: 2px;
+}
 
-        .search-icon-hex::after {
-            content: '';
-            width: 5px;
-            height: 2px;
-            background: #11101a;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) translate(3px, 3px) rotate(45deg);
-        }
+.hexagon-inner {
+    width: 100%;
+    height: 100%;
+    background: #11101a;
+    clip-path: polygon(15% 0%, 85% 0%, 91% 50%, 85% 100%, 15% 100%, 9% 50%);
+    padding: 0 35px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
 
-        /* Hexagon icon styling */
-        .hex-icon {
-            width: 24px;
-            height: 24px;
-            background: #ffcc00;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            margin-right: 10px;
-        }
-        
-        /* Alternative sizes */
-        .hexagon-search.small {
-            width: 16rem;
-            height: 70px;
-        }
+.search-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    padding-left: 20px;
+    padding-right: 60px;
+}
 
-        .hexagon-search.small .search-input {
-            font-size: 18px;
-            padding-left: 15px;
-            padding-right: 50px;
-        }
+.search-input::placeholder {
+    color: #ccc;
+    font-size: 24px;
+}
 
-        .hexagon-search.small .search-input::placeholder {
-            font-size: 18px;
-        }
 
-        .hexagon-search.small .search-icon-hex {
-            width: 40px;
-            height: 24px;
-        }
+.search-icon-hex {
+    width: 34px;
+    height: 25px;
+    background: #ffcc00;
+    clip-path: polygon(15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 
-        .hexagon-search.small .search-icon-hex::before {
-            width: 8px;
-            height: 8px;
-            border-width: 1.5px;
-        }
+}
 
-        .hexagon-search.small .search-icon-hex::after {
-            width: 4px;
-            height: 1.5px;
-        }
+/* Hexagon icon styling */
+    
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            main nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            main nav ul li {
-                margin: 0.5rem 0;
-            }
-            
-            .hexagon-search.small {
-                width: 12rem;
-                height: 60px;
-            }
-        }
+/* Alternative sizes */
+.hexagon-search.small {
+    width: 16rem;
+    height: 70px;
+}
+
+.hexagon-search.small .search-input {
+    font-size: 18px;
+    padding-left: 15px;
+    padding-right: 50px;
+}
+
+.hexagon-search.small .search-input::placeholder {
+    font-size: 18px;
+}
+
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    main nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    main nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .hexagon-search.small {
+        width: 12rem;
+        height: 60px;
+    }
+}
