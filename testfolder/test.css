@@ -1,62 +1,32 @@
-body {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-.c {
-    background: linear-gradient(to right, #fe8c00, #f83600);
+body {
+    background-color: #f3e9dc;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    height: 100vh;
 }
-
-.hexagon {
-    width: 100px;
-    height: 55px;
-    background: white;
+@font-face{
+    font-family: sagona;
+}
+.container {
     position: relative;
-
+ display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-direction:column;
 }
-
-.hexagon::before {
-    content: '';
-    position: absolute;
-    top: -29px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 29px solid white;
-
-}
-
-.hexagon::after {
-    content: '';
-    position: absolute;
-    bottom: -29px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 29px solid white;
-
-}
-
-.stick {
-    width: 50px;
-    height: 10px;
-    background: white;
+.card{
     position: relative;
-    top: 3.7rem;
-    right: 7rem;
-    transform: rotate(125deg);
-    border-radius: 25px;
+    height: 200px;
+    width:150px;
+    background: rgba(0, 0, 0, 0.45);
+    clip-path: path("M 10,20 L 60,20 L 70,10 Z");
+    overflow: hidden;
 }
