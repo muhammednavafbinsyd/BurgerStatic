@@ -59,17 +59,18 @@ main nav ul li:hover {
     width: 100%;
     height: 70%;
     background: #ffcc00;
-    /* clip-path: polygon(15% 0%, 85% 0%, 91% 50%, 85% 100%, 15% 100%, 9% 50%); */
-    clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%);
+    border-radius: 23%;
+    clip-path: polygon(15% 0%, 85% 0%, 90% 50%, 85% 100%, 15% 100%, 10% 50%);
     padding: 2px;
+    
 }
 
 .hexagon-inner {
     width: 100%;
     height: 100%;
     background: #11101a;
-    clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%);
-    /* clip-path: polygon(15% 0%, 85% 0%, 91% 50%, 85% 100%, 15% 100%, 9% 50%); */
+    border-radius: 23%;
+    clip-path: polygon(15% 0%, 85% 0%, 90% 50%, 85% 100%, 15% 100%, 10% 50%);
     padding: 0 35px;
     display: flex;
     align-items: center;
@@ -86,7 +87,7 @@ main nav ul li:hover {
     padding-left: 20px;
     padding-right: 60px;
     font-family: 'Sagona';
- 
+
 }
 
 .search-input::placeholder {
@@ -94,7 +95,7 @@ main nav ul li:hover {
     font-size: 1.5rem;
     font-family: 'Sagona';
     font-weight: 900;
-  
+
 }
 
 .search-icon-hex {
@@ -102,15 +103,12 @@ main nav ul li:hover {
     height: 20px;
     background: #ffcc00;
     clip-path: polygon(35% 0%, 75% 0%, 100% 50%, 75% 100%, 35% 100%, 10% 50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+
 }
 
 
 .hexagon-search.small {
-    width: 16rem;
+ width: 17rem;
     height: 70px;
 }
 
