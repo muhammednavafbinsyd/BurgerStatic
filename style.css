@@ -43,13 +43,12 @@ main nav ul li {
     transition: color 0.3s ease;
     font-family: 'Sagona';
     font-weight: 900;
-
 }
 
 .logo {
     position: relative;
     top: 0rem;
-    left: -19rem;
+    left: -15rem;
     right: 0rem;
     bottom: 0rem;
 }
@@ -124,15 +123,27 @@ main nav ul li:hover {
 
 h1 {
     color: rgb(242, 185, 12);
-    font-size: 2.5rem;
+    font-size: 3.5rem;
 
 }
 
 p {
-
     color: rgb(255, 255, 255);
 }
+button{
+    background: rgb(242, 185, 12);
+    border-radius: 20%;
+    padding: 10px;
+    border: none;
 
+}
+
+.contents {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 100px;
+}
 
 @media (max-width: 768px) {
     main nav ul {
