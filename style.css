@@ -4,17 +4,12 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'Sagona';
-    src: url('../BurgerStatic/fonts/sagona-cufonfonts/SAGONABOOKBOLD.TTF') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
+
 
 body {
     background-color: #11101a;
-    font-family: 'Sagona';
-
+    font-family: "Orelega One", serif;
+    font-style: normal;
 }
 
 main {
@@ -38,11 +33,11 @@ main nav ul li {
     margin: 0 1.5rem;
     list-style-type: none;
     font-size: 1.5rem;
-    color: white;
+    color: rgb(255, 255, 255);
     cursor: pointer;
     transition: color 0.3s ease;
-    font-family: 'Sagona';
-    font-weight: 900;
+    font-family: "Orelega One", serif;
+    font-weight: 400;
 }
 
 .logo {
@@ -93,16 +88,16 @@ main nav ul li:hover {
     color: white;
     padding-left: 20px;
     padding-right: 60px;
-    font-family: 'Sagona';
+    font-family: "Orelega One", serif;
 
 }
 
 .search-input::placeholder {
-    color: #fff;
-    font-size: 1.5rem;
-    font-family: 'Sagona';
-    font-weight: 900;
-
+    color: rgb(255, 255, 255);
+    font-size: 108px;
+    font-family: "Orelega One", serif;
+    font-weight: 400;
+    /* Changed from 900 to 400 */
 }
 
 
@@ -124,27 +119,39 @@ main nav ul li:hover {
 h1 {
     color: rgb(242, 185, 12);
     font-size: 3.5rem;
+    font-weight: 500;
 
 }
 
 p {
     color: rgb(255, 255, 255);
     font-size: 1.3rem;
+    font-family: "Raleway", sans-serif;
 }
 
 button {
     background: rgb(242, 185, 12);
-    border-radius: 15%;
-    padding: 10px;
+    border-radius: 13px;
+    padding: 12px;
+    width: 250px;
     border: none;
-
+    font-family: "Orelega One", serif;
+    font-size: 28px;
+    
 }
 
 .contents {
     display: flex;
-    justify-content: center;
-    align-self: center;
+    justify-content: space-evenly;
+    align-items: center;
     margin: 100px;
+    gap: 2rem;
+}
+
+.content-texts-button{
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 @media (max-width: 768px) {

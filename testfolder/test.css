@@ -12,3 +12,23 @@
   top: 826.453px;
   z-index: 23;
 } */
+.shape1{
+ border-radius: 50px;
+ background-color: rgb(242,185,12);
+ position: absolute;
+ left: 107px;
+ top: 1385px;
+ width: 742px;
+ height: 168px;
+ z-index: 12;
+}
+.shape2{
+  background-color: rgb(242,185,12);
+  position: absolute;
+  left: 2565;
+  top: 99px;
+  width: 552px;
+  height: 134px;
+  z-index: 8;
+
+}
