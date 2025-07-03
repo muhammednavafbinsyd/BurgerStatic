@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-
-
 body {
     background-color: #11101a;
     font-family: "Orelega One", serif;
@@ -16,8 +14,9 @@ main {
     background-image: url('./imG/Group\ 3.png');
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat:no-repeat;
     height: 100vh;
+    
 }
 
 main nav ul {
@@ -25,12 +24,12 @@ main nav ul {
     justify-content: center;
     align-items: center;
     position: relative;
-    top: 2rem;
+    top: 1rem;
 
 }
 
-main nav ul li {
-    margin: 0 1.5rem;
+main nav ul li  {
+    margin: 2.5rem;
     list-style-type: none;
     font-size: 1.5rem;
     color: rgb(255, 255, 255);
@@ -43,7 +42,7 @@ main nav ul li {
 .logo {
     position: relative;
     top: 0rem;
-    left: -15rem;
+    left: 0rem;
     right: 0rem;
     bottom: 0rem;
 }
@@ -64,7 +63,6 @@ main nav ul li:hover {
     border-radius: 23%;
     clip-path: polygon(15% 0%, 85% 0%, 90% 50%, 85% 100%, 15% 100%, 10% 50%);
     padding: 2px;
-
 }
 
 .hexagon-inner {
@@ -120,7 +118,6 @@ h1 {
     color: rgb(242, 185, 12);
     font-size: 3.5rem;
     font-weight: 500;
-
 }
 
 p {
@@ -137,21 +134,40 @@ button {
     border: none;
     font-family: "Orelega One", serif;
     font-size: 28px;
-    
+    font-weight:500;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+
 }
 
+button:hover{
+    transform: scale(1.1);
+}
 .contents {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    margin: 100px;
-    gap: 2rem;
+    margin: 0px 100px 0px 100px;
+
 }
 
-.content-texts-button{
-    flex-direction:column;
+.content-texts-button {
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+.social-icons i {
+    background-color: rgb(242, 185, 12);
+    padding: 10px;
+    border-radius: 50%;
+    margin: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.social-icons i:hover {
+    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
@@ -167,5 +183,13 @@ button {
     .hexagon-search.small {
         width: 12rem;
         height: 60px;
+    }
+
+    .contents {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 100px 0px 100px;
+
     }
 }
