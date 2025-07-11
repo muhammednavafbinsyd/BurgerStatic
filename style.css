@@ -16,7 +16,6 @@ main {
     background-size: cover;
     background-repeat:no-repeat;
     height: 100vh;
-    
 }
 
 main nav ul {
@@ -71,7 +70,7 @@ main nav ul li:hover {
     background: #11101a;
     border-radius: 23%;
     clip-path: polygon(15% 0%, 85% 0%, 90% 50%, 85% 100%, 15% 100%, 10% 50%);
-    padding: 0 35px;
+    padding: 0 50px;
     display: flex;
     align-items: center;
     position: relative;
