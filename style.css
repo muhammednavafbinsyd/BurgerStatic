@@ -116,14 +116,15 @@ main nav ul li:hover {
 
 h1 {
     color: rgb(242, 185, 12);
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     font-weight: 500;
+    margin-top: 50px;
 }
 
 p {
     color: rgb(255, 255, 255);
     font-size: 1.3rem;
-    font-family: "Raleway", sans-serif;
+    font-family: "Raleway", sans-serif;     
 }
 
 button {
@@ -133,10 +134,11 @@ button {
     width: 250px;
     border: none;
     font-family: "Orelega One", serif;
-    font-size: 28px;
+    font-size: 35px;
     font-weight:500;
     transition: transform 0.2s ease;
     cursor: pointer;
+     margin-top: 50px;
 
 }
 
@@ -145,16 +147,24 @@ button:hover{
 }
 .contents {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items: end;
     margin: 0px 100px 0px 100px;
 
 }
 
 .content-texts-button {
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+}
+
+.social-icons-container{
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: flex-end;
+    align-items:flex-end;
 }
 .social-icons i {
     background-color: rgb(242, 185, 12);
@@ -191,5 +201,11 @@ button:hover{
         align-items: center;
         margin: 0px 100px 0px 100px;
 
+    }
+    .social-icons{
+        display :none
+    }
+    #burger-image{
+        display: none;
     }
 }
