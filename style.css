@@ -207,4 +207,7 @@ button:hover{
     #burger-image{
         display: none;
     }
+    .social-icons-container{
+        display: none;
+    }
 }
