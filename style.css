@@ -1,62 +1,103 @@
-/* * {
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box !important;
-} */
+    box-sizing: border-box ;
+}
 
 body {
-    background-color: #11101a !important;   
-    font-family: "Orelega One", serif !important;
-    font-style: normal !important;
+    background-color: #11101a ;   
+    font-family: "Orelega One", serif ;
+    font-style: normal ;
+    background-image: url('./imG/Group\ 3.png');
+    background-position: center ;
+    background-size: cover ;
+    background-repeat:no-repeat; 
+
 }
 
-main {
-    background-image: url('./imG/Group\ 3.png') !important;
-    background-position: center !important;
-    background-size: cover !important;
-    background-repeat:no-repeat !important;
+/* Navbar Styles */
+.navbar{
+    width: 100%;
+    padding: 1rem 2rem;
+    transition: all 0.3s ease;
 }
 
-main nav ul {
+.nav-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
-    top: 1rem;
-
-}
-
-main nav ul li  {
-    margin: 2.5rem !important;
-    list-style-type: none !important;
-    font-size: 1.5rem !important;
-    color: rgb(255, 255, 255)!important;
-    cursor: pointer !important;
-    transition: color 0.3s ease !important;
-    font-family: "Orelega One", serif !important;
-    font-weight: 400 !important;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+}
+
+.logo-text {
+    color: rgb(242, 185, 12);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-item {
     position: relative;
-    top: 0rem;
-    left: 0rem;
-    right: 0rem;
-    bottom: 0rem;
 }
 
-main nav ul li:hover {
-    color: rgb(242, 185, 12) !important;
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: "Orelega One", serif;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    position: relative;
 }
 
+.nav-link:hover {
+    color: rgb(242, 185, 12);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: rgb(242, 185, 12);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Search Bar Styles */
 .hexagon-search {
     position: relative;
+    width: 17rem;
+    height: 50px;
 }
 
 .hexagon-border {
     position: absolute;
     width: 100%;
-    height: 70%;
+    height: 100%;
     background: rgb(242, 185, 12);
     border-radius: 23%;
     clip-path: polygon(15% 0%, 85% 0%, 90% 50%, 85% 100%, 15% 100%, 10% 50%);
@@ -85,38 +126,52 @@ main nav ul li:hover {
     padding-left: 20px;
     padding-right: 60px;
     font-family: "Orelega One", serif;
-
+    font-size: 1rem;
 }
 
 .search-input::placeholder {
     color: rgb(255, 255, 255);
-    font-size: 108px;
+    font-size: 1rem;
     font-family: "Orelega One", serif;
     font-weight: 400;
-    /* Changed from 900 to 400 */
 }
 
-
-.hexagon-search.small {
-    width: 17rem;
-    height: 70px; 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+  
 }
 
-.hexagon-search.small .search-input {
-    font-size: 1.5rem;
-    padding-left: 15px;
-    padding-right: 50px;
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: rgb(242, 185, 12);
+    margin: 3px 0;
+    transition: 0.3s;
+    transform-origin: center;
 }
 
-.hexagon-search.small .search-input::placeholder {
-    font-size: 1.5rem;
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
 }
 
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+} 
 h1 {
     color: rgb(242, 185, 12);
     font-size: 4.5rem;
     font-weight: 500;
-    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 p {
@@ -136,7 +191,7 @@ button {
     font-weight:500;
     transition: transform 0.2s ease;
     cursor: pointer;
-     margin-top: 50px;
+    
 
 }
 
@@ -146,9 +201,8 @@ button:hover{
 .contents {
     display: flex;
     justify-content: space-evenly;
-    align-items: end;
-    margin: 0px 100px 0px 100px;
-
+    align-items: center;
+    margin: 50px 50px 0px 50px;
 }
 
 .content-texts-button {
@@ -163,6 +217,8 @@ button:hover{
     display: flex;
     justify-content: flex-end;
     align-items:flex-end;
+    
+    
 }
 .social-icons i {
     background-color: rgb(242, 185, 12);
@@ -172,76 +228,114 @@ button:hover{
     font-size: 15px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    
 }
 
 .social-icons i:hover {
     transform: scale(1.1);
 }
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .hexagon-search {
+        width: 14rem;
+        height: 45px;
+    }
+    
+    .nav-menu {
+        gap: 1.5rem;
+    }
+    
+    .nav-link {
+        font-size: 1.1rem;
+    }
+}
 
+/* Mobile Styles */
 @media (max-width: 768px) {
     main{
         background: none;
     }
-    main nav ul {
-        display: none ;
-     
+    .navbar {
+        padding: 1rem;
     }
 
-    .hexagon-search.small {
-        width: 12rem;
-        height: 60px;
-    }
-
-    .contents {
-        flex-direction: column;
-        justify-content: center;
+    .hamburger {
+        display: flex;
+        justify-content: space-around;
         align-items: center;
-        margin: 0px 100px 0px 100px;
+        margin: 0;
+        padding: 0;
+        
+    }
+    span{
+        border-radius:25%;
+    }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgba(17, 16, 26, 0.98);
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(50px);
+        opacity: 5;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        
+    }
 
+    .nav-menu.active {
+        left: 0;
     }
-    .social-icons{
-        display :none
+
+    .nav-item {
+        margin: 1rem 0;
     }
-    #burger-image{
+
+    .nav-link {
+        font-size: 1.3rem;
+    }
+
+    .hexagon-search {
+      display: none;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+    #pizza-image{
         display: none;
     }
-    .social-icons-container{
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.8rem;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .hexagon-search {
+        width: 10rem;
+        height: 35px;
+    }
+
+    .search-input {
+        font-size: 0.9rem;
+    }
+
+    .search-input::placeholder {
+        font-size: 0.9rem;
+    }
+    #pizza-image{
         display: none;
     }
-}
-
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-
-
-    
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-
-    
-    
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-
-    
-
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-
-
-
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-
-
-
 }
